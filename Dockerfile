@@ -11,4 +11,5 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && pip install --no-cache-dir -r requirements/production.txt \
     && apk del .build-deps
 
+RUN ls /app/
 CMD gunicorn --bind '0.0.0.0:8000' 'domain_admin.main:app'
