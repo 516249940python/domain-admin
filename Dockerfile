@@ -12,4 +12,5 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && apk del .build-deps
 
 RUN ls /app/
+
 CMD gunicorn --bind '0.0.0.0:8000' 'domain_admin.main:app'
